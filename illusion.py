@@ -4,14 +4,19 @@ from bs4 import BeautifulSoup
 import requests
 
 url = 'https://hotelfornepal.com/'
+
+
 req = requests.get(url)
+
 bsObj = BeautifulSoup(req.text,'lxml')
 
 hotel = bsObj.findAll('article',class_ = 'accommodation_item one-fourth')
 
 
+
 hotel_store = []
 for each_hotel in hotel:
+    
     hotty =[]
     hotty.append(each_hotel.h3.text)
     hotty.append(each_hotel.find(class_="address").text)
@@ -19,7 +24,6 @@ for each_hotel in hotel:
     
     hotel_store.append(hotty)
        
-
 
 destinations = bsObj.findAll('article',class_='location_item one-fourth')
 destination = []
@@ -81,7 +85,8 @@ def home():
     planes = planes,
     tire = tire,
     truck = truck,
-    bar=bar)
+    bar=bar,
+    url = url)
 
 if __name__ == '__main__':
     app.run(debug=True)

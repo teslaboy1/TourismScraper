@@ -13,6 +13,9 @@
   <body>
     <h1>This site will scrape sites for Tourism sectors</h1>
     <p>Enjoy ;-D</p>
+
+    <p>{{ url }}</p>
+
     <br>
     <table class='table'>
       <thread>
@@ -24,9 +27,12 @@
             <h5>Address</h5>
           </td>
           <td scope='col'>
-            <h5>Image</h5>
+            <h5>Picture</h5>
           </td> 
         </tr>
+
+        
+        
         {% for thing in hotel_store %}
         <tr>
           <td scope='col'>{{thing[0]}}</td>
@@ -43,7 +49,7 @@
       </thread>
     </table>
 <br>  
-<br>
+
 <br>
     <table class='table'>
       <thread>
